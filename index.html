@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Apuntes </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Formularios facheros facheritos -->
+    <h3> Formularios </h3>
+    <section>
+        <form action="pagina.php" method="GET">
+            <p>
+                Nom
+                <input type="text" name="nom" id="nom">
+            </p>
+            <p>
+                Cognoms
+                <input type="text" name="cognom" id="cognom">
+            </p>
+
+            
+            <p> Password: 
+            <input type="password" name="passwd" id="passwd">
+        
+            </p>
+            <p> Escribe un número con decimales
+            <!-- Para que acepte decimales es con el apartado "step" -->
+            <input type="number"  step="any" name="numero">    
+            </p>
+            <br>
+            <br>
+            <!-- Para hacer que acepte desde un minimo es con lo siguente -->
+            <p> Numero minimo 5 <input type="number" min="5"></p>
+            <p> Escribe tu email<input type="email" placeholder="example@correo.com"></p>
+            <p> Escribe una fecha <input type="date" name="fecha" id="fecha"></p>
+            <p> Escribe un mes <input type="month" name="mes" ></p>
+            <p> Hora <input type="time"> </p>
+
+
+            <center><input type="submit" value="Click"></center>
+        </form>
+
+    </section>
+</body>
+</html>
