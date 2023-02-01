@@ -5,13 +5,119 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apuntes 2</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <section>
-        <form action="pagina.php" method="get">
             <form action="pagina.php" method="get">
-                <p> Estoy de acuerdo con los terminios y condiciones <input type="checkbox" name="checkbox" id="checkbox"></p>
-                
+                <h1> TITULO DEL FORMULARIO</h1>
+                <p> Estoy de acuerdo con los terminios y condiciones 
+                    <input type="checkbox" name="checkbox" id="checkbox" value="marcado">
+                    <input type="checkbox" name="checkbox" id="checkbox" value="marcado" checked></p>
+                    <!-- la opción checked sirve para que aparezca marcado por defecto -->
+                <input type="submit" name="enviar" id="enviar">
+
+                <p> Que vehiculo tienes: <br>
+                    motora <input type="checkbox" name="moto" value="si">
+                    bici <input type="checkbox"  name="cleta" value="si">
+                    coche <input type="checkbox"  name="carro" value="si">
+                </p>
+                <!-- El tipo radio es como un checkbox pero que solo puedes marcar uno pero con figura circular -->
+                <p><!-- Si todos tiene el mismo "name" esto hara que solo se pueda marcar uno, si queremosmarcas mñas de uno debemos cambiar sus nombres -->
+                    color favorito:
+                    rojo <input type="radio" name="color1" value="rojo">
+                    verde <input type="radio" name="color2" value="verde">
+                    azul <input type="radio" name="color3" value="azul">
+                </p>
+<!-- Esto es para enviar un color en hexadecimal -->
+                <p>
+                    color
+                    <input type="color" name="color">
+                </p>
+                <p>
+                    Selecciona tu nivel de ingles:
+                    <input type="range" id="nivel" name="nivel" min="1" max="100" step="7">
+                </p>
+                <!-- Este script esta en aules para copiar y pegar hay que tener cuidado con el id, dijo que no saldra en el examen-->
+                <p>Nota: <span id="nota"></span></p>
+
+                     <script>
+                    var slider = document.getElementById( "nivel");
+                    var output = document.getElementById( "nota");
+                    output.innerHTML = slider.value;
+                   
+                    slider.oninput = function() {
+                    output.innerHTML = this.value;
+                    }
+                    </script>
+                <p>
+                    Foto <input type="file">
+                </p>
+                <!-- Esto es para comentarios u observaciones en nuestros formularios, esto se pued ajustar desde el cliente y se puede quitar desde el css -->
+                <p>
+                    Observaciones: <br>
+                    <textarea name="observaciones" id="" cols="40" rows="10" value="Observaciones"></textarea>
+                </p>
+<!-- Menu se puede poner una selecciona por defecto con selected
+Hay que recordar poner values a todos los elementos del formulario -->
+                <p>
+                    Menu
+                    <select name="menu" id="menu" size="2" multiple> 
+                        <option selected> Selecciona una Opción</option>
+                        <option >A</option>
+                        <option >B</option>
+                        <option> C</option>
+                        
+                    </select>
+                </p>
+<!-- HAY QUE TENER CUIDADO CON LOS VALUES -->
+                <p>
+                    Selecciona el curso
+                    <select name="Curso" id="Curso" size="1">
+                        <optgroup label="ASIR"> 
+                            <option value="1asir">Primero</option>
+                            <option value="2asir"> Segundo</option>
+                        </optgroup>
+                        <optgroup label="DAM"> 
+                            <option value="1dam">Primero</option>
+                            <option value="2dam">Segundo</option>
+                        </optgroup>
+                        <optgroup label="DAW">
+                            <option value="1daw">Primero</option>
+                            <option value="2daw">Segundo</option>
+                        </optgroup>
+                    </select>
+                </p>
+                <!-- El fielshield es para darle un margen al texto
+                Y el legend es para pioner en medio del margen -->
+                <p>
+                    <fieldset>
+                        <legend> Datos Personales</legend>
+                        <p>
+                            Nombre:
+                            <input type="text" name="nombrealumno">
+                        </p>
+                        <p>
+                            Edad
+                            <input type="number" name="edadalumno">
+                        </p>
+                    </fieldset>
+                </p>
+                <!-- Ahora utilizaremos la opciñón label que puede ser explicita e implicita -->
+                <!-- Esta opción sirve para poder clickear fuera del checkbox y aun asi se marque
+                pero para esto tanto el texto a marcar como el mismo checbox deben estar dentro dek paramaetro label -->
+                    <!-- ESTA ES LA FORMA IMPLICITA -->
+                <p> <label>
+                    Casilla
+                    <input type="checkbox" name="Casilla"> 
+                </label>
+                </p>
+                <!-- ESTA ES LA FORMA EXPLICITA ya que esta indica el campo afectado mediante un id mientras que el anterior no lo hace -->
+                <p> 
+                    <label for="Casilla1"> Casilla </label>
+                        <input type="checkbox" name="Casilla1" id="Casilla1"> 
+    
+                </p>
         </form>
     </section>
 </body>
